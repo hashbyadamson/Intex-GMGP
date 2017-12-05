@@ -24,6 +24,5 @@ namespace Intex.Models
         [ForeignKey("Data_Report")]
         public virtual int? dataReportID { get; set; }
         public virtual Data_Report Data_Report { get; set; }
-
     }
 }
