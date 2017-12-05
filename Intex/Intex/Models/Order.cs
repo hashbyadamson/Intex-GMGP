@@ -12,17 +12,17 @@ namespace Intex.Models
     {
         [Key]
         public int orderID { get; set; }
-        public string comment { get; set; }
+        public String comment { get; set; }
         public int resultsMailed { get; set; }
-        public string summaryReport { get; set; }
+        public String summaryReport { get; set; }
         public DateTime comfirmationSenddatetime { get; set; }
 
         [ForeignKey("Order_Progress")]
-        public string orderProgress { get; set; }
+        public String orderProgress { get; set; }
         public virtual Order_Progress Order_Progress { get; set; }
 
         [ForeignKey("Employee")]
-        public string employeeID { get; set; }
+        public String employeeID { get; set; }
         public virtual Employee Employee { get; set; }
 
         [ForeignKey("Data_Report")]

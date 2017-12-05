@@ -12,9 +12,9 @@ namespace Intex.Models
     {
         [Key]
         public int testID { get; set; }
-        public string testName { get; set; }
-        public string equipmentReq { get; set; }
-        public string procedures { get; set; }
+        public String testName { get; set; }
+        public String equipmentReq { get; set; }
+        public String procedures { get; set; }
         public decimal basePrice { get; set; }
         public decimal testPrice { get; set; }
     }

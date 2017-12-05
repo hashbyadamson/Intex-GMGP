@@ -12,7 +12,7 @@ namespace Intex.Models
     {
         [Key]
         public int paymentTypeCode { get; set; }
-        public string paymentDescription { get; set; }
+        public String paymentDescription { get; set; }
 
     }
 }

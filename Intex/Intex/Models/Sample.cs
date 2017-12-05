@@ -10,9 +10,9 @@ namespace Intex.Models
     [Table("Sample")]
     public class Sample
     {
-        [Key]
+        [Key, Column(Order = 0)]
         public int LTNumber { get; set; }
-        [Key]
+        [Key, Column(Order = 1)]
         public int sequenceCode { get; set; }
         public int quantityMG { get; set; }
 

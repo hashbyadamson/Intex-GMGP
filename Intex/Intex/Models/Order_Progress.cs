@@ -11,7 +11,7 @@ namespace Intex.Models
     public class Order_Progress
     {
         [Key]
-        public string orderProgress { get; set; }
+        public String orderProgress { get; set; }
 
     }
 }
