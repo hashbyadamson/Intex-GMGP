@@ -2172,9 +2172,9 @@ fieldset[disabled] .btn-warning.active {
 }
 
 .btn-danger {
-  color: #ffffff;
-  background-color: #d9534f;
-  border-color: #d43f3a;
+    color: #ffffff;
+    background-color: #EE1C4D !important;
+    border-color: #d43f3a;
 }
 
 .btn-danger:hover,

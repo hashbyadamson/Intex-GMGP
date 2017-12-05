@@ -7,8 +7,8 @@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
-<body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
+<body background="~/Content/img/background1.jpg">
+    <div class="navbar navbar-default navbar-fixed-top" style="opacity:0.96">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -16,16 +16,43 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                <img src="~/Content/img/logo.gif" />
+
             </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
+            <div class="navbar-collapse collapse" style="padding: 17px 0">
+                <ul class="nav navbar-nav" style="font-size: 150%">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("Catalogue", "Catalogue", "Home")</li>
+                    <li>@Html.ActionLink("Customer Portal", "Login", "Home")</li>
+                    <li>@Html.ActionLink("Employee Portal", "Login", "Home")</li>
                 </ul>
             </div>
         </div>
+    </div>
+    <br />
+    <br />
+    <div class="header-row" id="header-row" style="padding: 0px; overflow:hidden; height:100px;">
+        @{
+            Random rnd = new Random();
+            int x = rnd.Next(1, 5);
+
+            if (x == 1)
+            {
+                <img src="~/Content/img/banner1.png" style="width: 100%;">
+            }
+            else if (x == 2)
+            {
+                <img src="~/Content/img/banner2.jpg" style="width: 100%;">
+            }
+            else if (x == 3)
+            {
+                <img src="~/Content/img/banner4.png" style="width: 100%;">
+            }
+            else if (x == 4)
+            {
+                <img src="~/Content/img/banner5.png" style="width: 100%;">
+            }
+        }
     </div>
     <div class="container body-content">
         @RenderBody()
