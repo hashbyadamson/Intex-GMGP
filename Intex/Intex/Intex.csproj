@@ -156,6 +156,7 @@
     <Compile Include="Controllers\SeattlePharmController.cs" />
     <Compile Include="Controllers\SingaporePharmController.cs" />
     <Compile Include="Controllers\TechDirectorControllerController.cs" />
+    <Compile Include="DAL\IntexContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
