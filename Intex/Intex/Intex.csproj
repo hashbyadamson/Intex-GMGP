@@ -159,6 +159,23 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Assay.cs" />
+    <Compile Include="Models\Assay_Test.cs" />
+    <Compile Include="Models\Check.cs" />
+    <Compile Include="Models\Client.cs" />
+    <Compile Include="Models\Compound.cs" />
+    <Compile Include="Models\Compound_Receipt_Log_Entry.cs" />
+    <Compile Include="Models\Compound_Weighing_and_Dispensing_Log_Entry.cs" />
+    <Compile Include="Models\Credit_Card_Payment.cs" />
+    <Compile Include="Models\Data_Report.cs" />
+    <Compile Include="Models\Deposit_Slip.cs" />
+    <Compile Include="Models\Employee.cs" />
+    <Compile Include="Models\Employee_Type.cs" />
+    <Compile Include="Models\Invoice.cs" />
+    <Compile Include="Models\Invoice_Details.cs" />
+    <Compile Include="Models\Login.cs" />
+    <Compile Include="Models\Material.cs" />
+    <Compile Include="Models\Material_Test.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -201,7 +218,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
     <Folder Include="Views\AccountsRec\" />
     <Folder Include="Views\Client\" />
     <Folder Include="Views\Management\" />
