@@ -8,11 +8,6 @@ namespace Intex.Controllers
 {
     public class AccountsRecController : Controller
     {
-        // GET: AccountsRec
-        public ActionResult Index()
-        {
-            return View();
-        }
 
         public ActionResult ViewOrders()
         {
@@ -26,21 +21,25 @@ namespace Intex.Controllers
 
         public ActionResult CreateInvoice()
         {
+            //***
             return View();
         }
 
-        public ActionResult UpdateInvoice()
+        public ActionResult EditInvoice()
         {
+            //***
             return View();
         }
 
         public ActionResult ViewInvoice()
         {
+            //***
             return View();
         }
 
         public ActionResult GenerateSalesReport()
         {
+            //***
             return View();
         }
     }
