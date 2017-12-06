@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 
 namespace Intex.Controllers
 {
@@ -24,9 +25,35 @@ namespace Intex.Controllers
 
         public ActionResult Login()
         {
-            ViewBag.Message = "Your application description page.";
+            
 
             return View();
+        }
+        [HttpPost]
+        public ActionResult Login(FormCollection form, bool rememberMe = false)
+        {
+            String email = form["Username"].ToString();
+            String password = form["Password"].ToString();
+
+            if (string.Equals(email, "employee") && (string.Equals(password, "employee")))
+            {
+                FormsAuthentication.SetAuthCookie(email, rememberMe);
+
+                return RedirectToAction("Display", "Orders");
+
+            }
+            else if (string.Equals(email, "client") && (string.Equals(password,"client")))
+            {
+                FormsAuthentication.SetAuthCookie(email, rememberMe);
+
+                return RedirectToAction("Catalogue", "Home");
+            }
+            else
+            {
+                ViewBag.Message = "Invalid username or password";
+                return View();
+
+            }
         }
 
         [HttpGet]
