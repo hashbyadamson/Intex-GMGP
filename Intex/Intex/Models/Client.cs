@@ -21,7 +21,7 @@ namespace Intex.Models
         public String clientZip { get; set; }
         public String clientPhone { get; set; }
         public String clientCountry { get; set; }
-        public String clientDiscount { get; set; }
+        public decimal clientDiscount { get; set; }
         public String clientEmail { get; set; }
 
         [ForeignKey("Login")]
