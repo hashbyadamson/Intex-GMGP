@@ -1,0 +1,75 @@
+﻿@model IEnumerable<Intex.Models.Order>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Client.clientFirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Data_Report.rawData)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Employee.employeeFirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Order_Progress.orderProgress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.comment)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.resultsMailed)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.summaryReport)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.comfirmationSenddatetime)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Client.clientFirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Data_Report.rawData)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Employee.employeeFirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Order_Progress.orderProgress)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.comment)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.resultsMailed)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.summaryReport)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.comfirmationSenddatetime)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.orderID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.orderID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.orderID })
+        </td>
+    </tr>
+}
+
+</table>

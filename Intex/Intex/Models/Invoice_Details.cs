@@ -12,6 +12,7 @@ namespace Intex.Models
     {
         [Key]
         public int invoiceLine { get; set; }
+        public decimal totalPrice { get; set; }
 
         [ForeignKey("Invoice")]
         public virtual int invoiceID { get; set; }
