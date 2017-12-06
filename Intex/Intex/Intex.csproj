@@ -251,6 +251,7 @@
     <Content Include="Views\AccountsRec\ViewInvoice.cshtml" />
     <Content Include="Views\Orders\PastOrders.cshtml" />
     <Content Include="Views\SalesRep\CreateClient.cshtml" />
+    <Content Include="Views\Clients\PastOrder.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

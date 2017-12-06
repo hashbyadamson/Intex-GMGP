@@ -9,52 +9,50 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.testName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.equipmentReq)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.procedures)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.basePrice)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.testPrice)
-        </th>
-        <th></th>
-    </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.testName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.equipmentReq)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.procedures)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.basePrice)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.testPrice)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.testID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.testID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.testID })
-        </td>
-    </tr>
+@using (Html.BeginForm())
+{
+
+    <table class="table">
+        <tr>
+            <th>
+                Test Name
+            </th>
+            <th>
+                total Price
+            </th>
+            <th>Quantity</th>
+            <th></th>
+        </tr>
+
+
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.testName)
+            </td>
+            <td>
+                @(item.testPrice + item.basePrice)
+            </td>
+            <td>
+                <form>
+                    @Html.HiddenFor(modelItem => item.testID)
+                    <input type="text" name="qty" style="width:40px"><br>
+                </form>
+            </td>
+            <td>
+                <a href="@Url.Action("Index", "Home")" class="btn btn-danger btn-lg"> Add to cart <i class='glyphicon glyphicon-plus-sign'></i></a>
+            </td>
+
+        </tr>
+        }
+
+    </table>
+
+    <form>
+        <input type="submit" OnClick="Catalogue" formmethod="post">
+        @Html.AntiForgeryToken()
+    </form>
 }
-
-</table>
-
-
-

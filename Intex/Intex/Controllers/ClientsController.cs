@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using Intex.DAL;
 using Intex.Models;
+using System.Data.SqlClient;
 
 namespace Intex.Controllers
 {
@@ -128,6 +129,23 @@ namespace Intex.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
+        }
+        public ActionResult PastOrder()
+        {
+
+            IEnumerable<PastOrders> pastOrder =
+                 db.Database.SqlQuery<PastOrders>(
+                "Select [Order].orderID, [Order].resultsMailed, [Order].clientID, " +
+                "[Order].orderProgress, [Order].comment, " +
+                "[Order].summaryReport " +
+                "From [Order] WHERE [Order].clientID = 4");
+            int clientID = 4;
+
+            Client client = db.Clients.Find(clientID);
+            ViewBag.client = client;
+
+
+            return View(pastOrder);
         }
 
     }

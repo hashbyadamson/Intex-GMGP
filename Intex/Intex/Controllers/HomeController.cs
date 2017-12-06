@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Intex.DAL;
+using Intex.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,6 +10,13 @@ namespace Intex.Controllers
 {
     public class HomeController : Controller
     {
+        private IntexContext db = new IntexContext();
+        public class Qty
+        {
+            int qty;
+            int testID;
+        }
+
         public ActionResult Index()
         {
             return View();
@@ -20,18 +29,32 @@ namespace Intex.Controllers
             return View();
         }
 
+        [HttpGet]
         public ActionResult Catalogue()
         {
-            ViewBag.Message = "Your contact page.";
+            IEnumerable<Test> test =
+                 db.Database.SqlQuery<Test>(
+                "Select Test.testID, Test.testName, Test.equipmentReq, Test.procedures, " +
+                "Test.basePrice, Test.testPrice FROM Test");
 
+            return View(test);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Catalogue([Bind(Include = "testID,qty")] Qty qty)
+        {
+            if (ModelState.IsValid)
+            {
+                return RedirectToAction("Index");
+            }
             return View();
         }
+
     }
 }
-
 /*
- * /*
- * 
+ *
 @{
     ViewBag.Title = "Catalogue";
 }
