@@ -254,6 +254,7 @@
     <Content Include="Views\Test_Result\Details.cshtml" />
     <Content Include="Views\Test_Result\Edit.cshtml" />
     <Content Include="Views\Test_Result\Index.cshtml" />
+    <Content Include="Views\SingaporePharm\PastTestDetails.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

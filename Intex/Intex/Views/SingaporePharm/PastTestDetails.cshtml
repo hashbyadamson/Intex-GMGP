@@ -1,0 +1,71 @@
+﻿@model Intex.Models.Test_Result
+
+@{
+    ViewBag.Title = "PastTestDetails";
+}
+
+<h2>Test Details</h2>
+
+<hr />
+<div>
+    <h4>Test_Result</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Test ID
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Test.testID)
+        </dd>
+
+        <dt>
+            Test Name
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Test.testName)
+        </dd>
+
+        <dt>
+            Compound Name
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Order.comment)
+        </dd>
+
+        <dt>
+            Client ID
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Order.ClientID)
+        </dd>
+
+        <dt>
+            Test Base Price
+        </dt>
+
+        <dd>
+            $@Html.DisplayFor(model => model.Test.basePrice)
+        </dd>
+
+        <dt>
+            Test Materials and Labor Cost
+        </dt>
+
+        <dd>
+           $@Html.DisplayFor(model => model.Test.testPrice)
+        </dd>
+        
+        <dt>
+            Raw Data From Test
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Data_Report.rawData)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Back to Test List", "ViewPastTests", new { @class = "btn btn-primary" })
+</p>
+
