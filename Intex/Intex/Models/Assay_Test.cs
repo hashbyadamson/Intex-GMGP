@@ -15,6 +15,6 @@ namespace Intex.Models
         [Key, Column(Order = 1)]
         public int assayID { get; set; }
 
-        public int isTestRequired { get; set; }
+        public bool isTestRequired { get; set; }
     }
 }

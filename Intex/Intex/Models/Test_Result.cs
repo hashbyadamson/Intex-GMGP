@@ -11,7 +11,7 @@ namespace Intex.Models
     public class Test_Result
     {
         [Key]
-        public int testTubeNumber { get; set; }
+        public int testResultID { get; set; }
 
         [ForeignKey("Order")]
         public virtual int orderID { get; set; }
