@@ -1,0 +1,114 @@
+﻿@model Intex.Models.Client
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Client</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Login.password)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Login.password)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.clientFirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.clientFirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.clientLastName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.clientLastName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.addressLine1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.addressLine1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.addressLine2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.addressLine2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.clientCity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.clientCity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.clientState)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.clientState)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.clientZip)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.clientZip)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.clientPhone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.clientPhone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.clientCountry)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.clientCountry)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.clientDiscount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.clientDiscount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.clientEmail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.clientEmail)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.clientID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

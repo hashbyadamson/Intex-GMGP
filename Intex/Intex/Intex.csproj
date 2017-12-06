@@ -150,15 +150,42 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AccountsRecController.cs" />
     <Compile Include="Controllers\ClientController.cs" />
+    <Compile Include="Controllers\ClientsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManagementController.cs" />
+    <Compile Include="Controllers\OrdersController.cs" />
     <Compile Include="Controllers\SalesRepController.cs" />
     <Compile Include="Controllers\SeattlePharmController.cs" />
     <Compile Include="Controllers\SingaporePharmController.cs" />
     <Compile Include="Controllers\TechDirectorControllerController.cs" />
+    <Compile Include="DAL\IntexContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Assay.cs" />
+    <Compile Include="Models\Assay_Test.cs" />
+    <Compile Include="Models\Check.cs" />
+    <Compile Include="Models\Client.cs" />
+    <Compile Include="Models\Compound.cs" />
+    <Compile Include="Models\Compound_Receipt_Log_Entry.cs" />
+    <Compile Include="Models\Compound_Weighing_and_Dispensing_Log_Entry.cs" />
+    <Compile Include="Models\Credit_Card_Payment.cs" />
+    <Compile Include="Models\Data_Report.cs" />
+    <Compile Include="Models\Deposit_Slip.cs" />
+    <Compile Include="Models\Employee.cs" />
+    <Compile Include="Models\Employee_Type.cs" />
+    <Compile Include="Models\Invoice.cs" />
+    <Compile Include="Models\Invoice_Details.cs" />
+    <Compile Include="Models\Login.cs" />
+    <Compile Include="Models\Material.cs" />
+    <Compile Include="Models\Material_Test.cs" />
+    <Compile Include="Models\Order.cs" />
+    <Compile Include="Models\Order_Progress.cs" />
+    <Compile Include="Models\Payment_Type.cs" />
+    <Compile Include="Models\Sample.cs" />
+    <Compile Include="Models\Test.cs" />
+    <Compile Include="Models\Test_Result.cs" />
+    <Compile Include="Models\Test_Tube.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -206,10 +233,19 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\Login.cshtml" />
     <Content Include="Views\Home\Catalogue.cshtml" />
+    <Content Include="Views\Clients\Create.cshtml" />
+    <Content Include="Views\Clients\Delete.cshtml" />
+    <Content Include="Views\Clients\Details.cshtml" />
+    <Content Include="Views\Clients\Edit.cshtml" />
+    <Content Include="Views\Clients\Index.cshtml" />
+    <Content Include="Views\Orders\Create.cshtml" />
+    <Content Include="Views\Orders\Delete.cshtml" />
+    <Content Include="Views\Orders\Details.cshtml" />
+    <Content Include="Views\Orders\Edit.cshtml" />
+    <Content Include="Views\Orders\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
     <Folder Include="Views\AccountsRec\" />
     <Folder Include="Views\Client\" />
     <Folder Include="Views\Management\" />

@@ -5,6 +5,9 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using System.Data.Entity;
+using Intex.Models;
+using Intex.DAL;
 
 namespace Intex
 {
@@ -12,6 +15,8 @@ namespace Intex
     {
         protected void Application_Start()
         {
+            Database.SetInitializer<IntexContext>(null);
+
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
