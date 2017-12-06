@@ -1,0 +1,42 @@
+﻿@model Intex.Models.Test_Result
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Test_Result</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Data_Report.rawData)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Data_Report.rawData)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Order.comment)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Order.comment)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Test.testName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Test.testName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.testResultID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
