@@ -22,7 +22,7 @@ namespace Intex.Models
         public virtual int? clientID { get; set; }
         public virtual Client Client { get; set; }
 
-        [ForeignKey("Deposite_Slip")]
+        [ForeignKey("Deposit_Slip")]
         public virtual int? depositSlipNumber { get; set; }
         public virtual Deposit_Slip Deposit_Slip { get; set; }
 

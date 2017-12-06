@@ -22,7 +22,7 @@ namespace Intex.Models
         public virtual Order_Progress Order_Progress { get; set; }
 
         [ForeignKey("Employee")]
-        public String employeeID { get; set; }
+        public int employeeID { get; set; }
         public virtual Employee Employee { get; set; }
 
         [ForeignKey("Data_Report")]

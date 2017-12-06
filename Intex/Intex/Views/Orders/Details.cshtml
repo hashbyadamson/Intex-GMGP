@@ -1,0 +1,82 @@
+﻿@model Intex.Models.Order
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Order</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Client.clientFirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Client.clientFirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Data_Report.rawData)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Data_Report.rawData)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Employee.employeeFirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Employee.employeeFirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Order_Progress.orderProgress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Order_Progress.orderProgress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.comment)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.comment)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.resultsMailed)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.resultsMailed)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.summaryReport)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.summaryReport)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.comfirmationSenddatetime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.comfirmationSenddatetime)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.orderID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
