@@ -141,5 +141,17 @@ namespace Intex.Controllers
             }
             base.Dispose(disposing);
         }
+
+        public ActionResult PastOrders()
+        {
+            IEnumerable<PastOrders> clientPastOrders =
+                db.Database.SqlQuery<PastOrders>(
+                    "Select [Order].orderID, [Order].clientID, [Order].orderProgress," +
+                    "[Order].comment, [Order].summaryReport, [Order].resultsMailed " +
+                    "FROM [Order] " +
+                    "WHERE [Order].clientID = 4");
+
+            return View(clientPastOrders);
+        }
     }
 }

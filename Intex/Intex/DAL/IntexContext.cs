@@ -38,5 +38,6 @@ namespace Intex.DAL
         public DbSet<Test> Tests { get; set; }
         public DbSet<Test_Result> Test_Results { get; set; }
         public DbSet<Test_Tube> Test_Tubes { get; set; }
+        public DbSet<PastOrders> PastOrder { get; set; }
     }
 }

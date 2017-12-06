@@ -1,0 +1,51 @@
+﻿@model IEnumerable<Intex.Models.PastOrders>
+
+@{
+    ViewBag.Title = "PastOrders";
+}
+
+<h2>Past Orders</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.comment)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.summaryReport)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.resultsMailed)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.orderProgress)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.comment)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.summaryReport)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.resultsMailed)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.orderProgress)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.orderID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.orderID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.orderID })
+        </td>
+    </tr>
+}
+
+</table>
