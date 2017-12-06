@@ -4,36 +4,34 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Orders</h2>
+@Html.ActionLink("Return to Display", "Display", null, new { @class= "btn btn-danger btn-md" })
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Client.clientFirstName)
+            Raw Data
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Data_Report.rawData)
+            Summary Report
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Employee.employeeFirstName)
+            Employee First Name
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Order_Progress.orderProgress)
+            Client First Name
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.comment)
+            Order Progress
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.resultsMailed)
+            Confirmation Sent:
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.summaryReport)
+            Have the Results been Mailed?
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.comfirmationSenddatetime)
+            Comments
         </th>
         <th></th>
     </tr>
@@ -41,35 +39,43 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.Client.clientFirstName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Data_Report.rawData)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Employee.employeeFirstName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Order_Progress.orderProgress)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.comment)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.resultsMailed)
+             @Html.DisplayFor(modelItem => item.Data_Report.rawData)
+            
+            
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.summaryReport)
         </td>
         <td>
+            @Html.DisplayFor(modelItem => item.Employee.employeeFirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Client.clientFirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Order_Progress.orderProgress)
+        </td>
+        <td>
             @Html.DisplayFor(modelItem => item.comfirmationSenddatetime)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.orderID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.orderID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.orderID })
+            @Html.DisplayFor(modelItem => item.resultsMailed)
+        </td>
+        <td>
+             @Html.DisplayFor(modelItem => item.comment)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.orderID }, new { @class = "btn btn-danger btn-sm" })
+            
         </td>
     </tr>
 }
 
 </table>
+
+<p>
+
+@TempData["Name"]
+
+</p>
+

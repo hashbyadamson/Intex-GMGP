@@ -5,3 +5,29 @@
 
 <h2>Login</h2>
 
+<center><h3>Please sign in to view this information.</h3></center>
+<br />
+<br />
+<hr />
+<div class="row">
+    <div class="col-lg-12" align="center">
+
+        @using (Html.BeginForm("Login", "Home", FormMethod.Post))
+        {
+
+
+            <label for="inputName" class="sr-only">Username</label>
+            @Html.TextBox("Username", "", new { type = "username", id = "inputName", @class = "form-control", placeholder = "Username", required = true, autofocus = true })
+
+            <label for="inputPassword" class="sr-only">Password</label>
+            @Html.Password("Password", "", new { type = "password", id = "inputPassword", @class = "form-control", placeholder = "Password", required = true, autofocus = true })
+            <br />
+            <p style="color:red;">@ViewBag.Message</p>
+            <button class="btn btn-primary btn-md btn" type="submit">Login</button>
+
+
+        }
+
+
+    </div>
+</div>

@@ -1,0 +1,70 @@
+﻿
+@{
+    ViewBag.Title = "Display";
+}
+
+<h2>Seattle Employee</h2>
+
+@Html.ActionLink("Select an Order to Edit", "Index", null, new { @class = "btn btn-danger btn-md" })
+
+
+<h3>Upload PDF of Data Report or Summary Report</h3>
+
+
+<div id="dropArea">
+    Drop your files here
+</div>
+<h4>Uploaded files: </h4>
+<ul class="list-group" id="uploadList"></ul>
+<hr />
+
+<style>
+    #dropArea {
+        background: #b5b5b5;
+        border: black dashed 1px;
+        height: 50px;
+        text-align: center;
+        color: #fff;
+        font-size:20px;
+        padding:70px;
+    }
+
+    .active-drop {
+        background: transparent !important;
+        border: solid 2px #ed1e4d !important;
+        color: black !important;
+        padding:70px;
+    }
+</style>
+
+@section Scripts{
+    <script src="~/Scripts/jquery.filedrop.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('#dropArea').filedrop({
+                url: '@Url.Action("UploadFiles")',
+                allowedfiletypes: [],
+                allowedfileextensions: [],
+                paramname: 'files',
+                maxfiles: 500,
+                maxfilesize: 25, // in MB
+                dragOver: function () {
+                    $('#dropArea').addClass('active-drop');
+                },
+                dragLeave: function () {
+                    $('#dropArea').removeClass('active-drop');
+                },
+                drop: function () {
+                    $('#dropArea').removeClass('active-drop');
+                },
+                afterAll: function (e) {
+                    $('#dropArea').html('file uploaded successfully');
+                },
+                uploadFinished: function (i, file, response, time) {
+                    $('#uploadList').append('<li class="list-group-item">'+file.name+'</li>')
+                }
+            })
+        })
+    </script>
+}
+

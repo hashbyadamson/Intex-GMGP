@@ -8,12 +8,74 @@ using System.Web;
 using System.Web.Mvc;
 using Intex.DAL;
 using Intex.Models;
+using System.IO;
+using System.Data.SqlClient;
 
 namespace Intex.Controllers
 {
     public class OrdersController : Controller
     {
         private IntexContext db = new IntexContext();
+
+        [Authorize]
+        public ActionResult Display()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult UploadFiles(IEnumerable<HttpPostedFileBase> files)
+        {
+            foreach (var file in files)
+            {
+                
+                string filePath = Guid.NewGuid() + Path.GetExtension(file.FileName);
+                file.SaveAs(Path.Combine(Server.MapPath("~/UploadedFiles"), filePath));
+                //Here you can write code for save this information in your database if you want
+
+
+                TempData["Name"] = file.FileName.ToString();
+
+
+
+            }
+            string name = TempData["Name"].ToString();
+           
+            SqlConnection conn;
+            conn = new SqlConnection("Data Source=SPENCERLAPTOP\\SQLEXPRESS;Initial Catalog=Blowout;Integrated Security=True;Pooling=False");
+            try
+            {
+                // Open the connection
+                conn.Open();
+
+                // prepare command string
+                string insertString = @"
+            
+            USE INTEX
+            UPDATE R 
+            SET R.rawData = '" +  name  + @"'
+            FROM [Order] AS P
+            INNER JOIN Data_Report AS R 
+            ON R.dataReportID = P.dataReportID
+            WHERE clientID = 2 and P.dataReportID = 10001";
+
+                // 1. Instantiate a new command with a query and connection
+                SqlCommand cmd = new SqlCommand(insertString, conn);
+
+                // 2. Call ExecuteNonQuery to send command
+                cmd.ExecuteNonQuery();
+            }
+            finally
+            {
+                // Close the connection
+                if (conn != null)
+                {
+                    conn.Close();
+                }
+            };
+            return View("Display");
+        }
+
 
         // GET: Orders
         public ActionResult Index()
