@@ -158,6 +158,7 @@
     <Compile Include="Controllers\SeattlePharmController.cs" />
     <Compile Include="Controllers\SingaporePharmController.cs" />
     <Compile Include="Controllers\TechDirectorControllerController.cs" />
+    <Compile Include="Controllers\Test_ResultController.cs" />
     <Compile Include="DAL\IntexContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -180,6 +181,7 @@
     <Compile Include="Models\Material.cs" />
     <Compile Include="Models\Material_Test.cs" />
     <Compile Include="Models\Order.cs" />
+    <Compile Include="Models\OrderDetails2.cs" />
     <Compile Include="Models\Order_Progress.cs" />
     <Compile Include="Models\Payment_Type.cs" />
     <Compile Include="Models\Sample.cs" />
@@ -243,6 +245,15 @@
     <Content Include="Views\Orders\Details.cshtml" />
     <Content Include="Views\Orders\Edit.cshtml" />
     <Content Include="Views\Orders\Index.cshtml" />
+    <Content Include="Views\Clients\CreateOrder.cshtml" />
+    <Content Include="Views\Clients\ViewOrderStatus.cshtml" />
+    <Content Include="Views\Clients\EditNotifications.cshtml" />
+    <Content Include="Views\SingaporePharm\ViewPastTests.cshtml" />
+    <Content Include="Views\Test_Result\Create.cshtml" />
+    <Content Include="Views\Test_Result\Delete.cshtml" />
+    <Content Include="Views\Test_Result\Details.cshtml" />
+    <Content Include="Views\Test_Result\Edit.cshtml" />
+    <Content Include="Views\Test_Result\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -251,7 +262,6 @@
     <Folder Include="Views\Management\" />
     <Folder Include="Views\SalesRep\" />
     <Folder Include="Views\SeattlePharm\" />
-    <Folder Include="Views\SingaporePharm\" />
     <Folder Include="Views\TechDirectorController\" />
   </ItemGroup>
   <ItemGroup>

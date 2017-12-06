@@ -1,0 +1,45 @@
+﻿@model IEnumerable<Intex.Models.Test_Result>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Data_Report.rawData)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Order.comment)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Test.testName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Data_Report.rawData)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Order.comment)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Test.testName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.testResultID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.testResultID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.testResultID })
+        </td>
+    </tr>
+}
+
+</table>

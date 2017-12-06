@@ -1,0 +1,106 @@
+﻿@model Intex.Models.Order
+
+@{
+    ViewBag.Title = "ViewOrderStatus";
+}
+
+<!--<h2>//Model.orderProgress</h2>-->
+
+<div class="jumbotron">
+    <h2>Order Status: @ViewBag.Orders</h2>
+    
+    @{ 
+        if (ViewBag.Orders == "Order Received")
+        {
+            <div class="progress">
+                <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar"
+                     aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:10%">
+                    10% Complete
+                </div>
+                
+            </div>
+        }
+        else if (ViewBag.Orders == "Compound Received")
+        {
+            <div class="progress">
+                <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar"
+                     aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:20%">
+                    20% Complete
+                </div>
+               
+            </div>
+        }
+        else if (ViewBag.Orders == "Test in Progress")
+        {
+            <div class="progress">
+                <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar"
+                     aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width:30%">
+                    30% Complete
+                </div>
+                
+            </div>
+        }
+
+        else if (ViewBag.Orders == "Test Complete")
+        {
+            <div class="progress">
+                <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar"
+                     aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:60%">
+                    60% Complete
+                </div>
+                
+            </div>
+        }
+
+
+        else if (ViewBag.Orders == "Running Analysis")
+        {
+            <div class="progress">
+                <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar"
+                     aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:80%">
+                    80% Complete 
+                </div>
+                
+            </div>
+        }
+
+
+        else if (ViewBag.Orders == "Results Posted")
+        {
+            <div class="progress">
+                <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar"
+                     aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:100%">
+                    100% Complete 
+                </div>
+            </div>
+
+            <p>@Html.ActionLink("View Results", "", "", null, new { @class = "btn btn-default" })</p>
+        }
+    }
+</div>
+
+<div class="row">
+    <div class="col-md-2"></div>
+    <br />
+
+    <div class="col-md-8">
+      
+            <h2>Order Details: </h2>
+
+            <p>Order Number: Model.orderID </p>
+
+            <p>Compound Name: Model.compoundName (Can't get in database)</p>
+
+            <p>Number of Samples sent: Model.NumOfSamples (Don't have anywhere in database)</p>
+
+            <p>Tests to be run on Compound:  </p>
+
+            <p>Quoted Price: </p>
+       
+    </div>
+
+    <div class="col-md-2">
+        <br />
+    </div>
+            
+</div>

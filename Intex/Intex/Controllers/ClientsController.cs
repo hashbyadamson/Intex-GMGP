@@ -129,5 +129,33 @@ namespace Intex.Controllers
             }
             base.Dispose(disposing);
         }
+
+        public ActionResult CreateOrder()
+        {
+            //??????????????? There is a view but I don't know what to do. 
+            return View();
+
+        }
+
+        public ActionResult ViewOrderStatus()
+        {
+            //these are only for testing this actionmethod
+            string orderProgress = "Test in Progress";
+            ViewBag.Orders = orderProgress;
+
+            return View();
+        }
+
+        public ActionResult EditNotifications()
+        {
+            ViewBag.ReceiveEmail = true;
+            return View();
+        }
+
+
+
+
+
+
     }
 }
