@@ -17,11 +17,10 @@ namespace Intex.Models
         public DateTime dateReceived { get; set; }
         public DateTime depositDate { get; set; }
         public decimal checkAmount { get; set; }
-
-
+  
         [ForeignKey("Client")]
         public virtual int? clientID { get; set; }
-        public virtual Client client { get; set; }
+        public virtual Client Client { get; set; }
 
         [ForeignKey("Deposite_Slip")]
         public virtual int? depositSlipNumber { get; set; }
