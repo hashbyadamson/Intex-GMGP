@@ -183,6 +183,7 @@
     <Compile Include="Models\Order.cs" />
     <Compile Include="Models\OrderDetails2.cs" />
     <Compile Include="Models\Order_Progress.cs" />
+    <Compile Include="Models\PastOrders.cs" />
     <Compile Include="Models\Payment_Type.cs" />
     <Compile Include="Models\Sales_Report_By_Assay.cs" />
     <Compile Include="Models\Sales_Report_By_Customer.cs" />
@@ -297,6 +298,9 @@
     <Content Include="Views\AccountsRec\InvoiceDetails.cshtml" />
     <Content Include="Views\AccountsRec\EditInvoice.cshtml" />
     <Content Include="Views\AccountsRec\ViewInvoice.cshtml" />
+    <Content Include="Views\Orders\PastOrders.cshtml" />
+    <Content Include="Views\SalesRep\CreateClient.cshtml" />
+    <Content Include="Views\Clients\PastOrder.cshtml" />
     <Content Include="Views\Clients\CreateOrder.cshtml" />
     <Content Include="Views\Clients\ViewOrderStatus.cshtml" />
     <Content Include="Views\Clients\EditNotifications.cshtml" />
@@ -314,7 +318,6 @@
     <Folder Include="App_Data\" />
     <Folder Include="Views\Client\" />
     <Folder Include="Views\Management\" />
-    <Folder Include="Views\SalesRep\" />
     <Folder Include="Views\SeattlePharm\" />
     <Folder Include="Views\TechDirectorController\" />
   </ItemGroup>
