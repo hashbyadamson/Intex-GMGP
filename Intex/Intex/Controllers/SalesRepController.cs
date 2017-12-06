@@ -11,11 +11,13 @@ namespace Intex.Controllers
         // GET: SalesRep
         public ActionResult Index()
         {
+
             return View();
         }
 
         public ActionResult CreateClient()
         {
+
             return View();
         }
 

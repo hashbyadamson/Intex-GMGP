@@ -181,6 +181,7 @@
     <Compile Include="Models\Material_Test.cs" />
     <Compile Include="Models\Order.cs" />
     <Compile Include="Models\Order_Progress.cs" />
+    <Compile Include="Models\PastOrders.cs" />
     <Compile Include="Models\Payment_Type.cs" />
     <Compile Include="Models\Sample.cs" />
     <Compile Include="Models\Test.cs" />
@@ -243,13 +244,14 @@
     <Content Include="Views\Orders\Details.cshtml" />
     <Content Include="Views\Orders\Edit.cshtml" />
     <Content Include="Views\Orders\Index.cshtml" />
+    <Content Include="Views\Orders\PastOrders.cshtml" />
+    <Content Include="Views\SalesRep\CreateClient.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\AccountsRec\" />
     <Folder Include="Views\Client\" />
     <Folder Include="Views\Management\" />
-    <Folder Include="Views\SalesRep\" />
     <Folder Include="Views\SeattlePharm\" />
     <Folder Include="Views\SingaporePharm\" />
     <Folder Include="Views\TechDirectorController\" />
