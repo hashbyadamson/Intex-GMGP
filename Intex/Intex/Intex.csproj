@@ -198,6 +198,7 @@
     <Content Include="Content\img\banner5.png" />
     <Content Include="Content\img\banner6.png" />
     <Content Include="Content\img\logo.gif" />
+    <Content Include="Content\img\test tubes.png" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
