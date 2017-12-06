@@ -1,0 +1,63 @@
+﻿@model IEnumerable<Intex.Models.Invoice>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>All Invoices</h2>
+
+<p>
+    @Html.ActionLink("Create New", "CreateInvoice")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Credit Card Number
+        </th>
+        <th>
+            Comments
+        </th>
+        <th>
+            Payment Method
+        </th>
+        <th>
+            Payment Due Date
+        </th>
+        <th>
+           Payment Early Date
+        </th>
+        <th>
+            Early Payment Discount
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Credit_Card_Payment.creditCardPaymentNum)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Order.comment)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Payment_Type.paymentDescription)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.paymentDue)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.paymentEarly)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.earlyPaymentDisc)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "EditInvoice", new { id=item.invoiceID }) |
+            @Html.ActionLink("Details", "InvoiceDetails", new { id=item.invoiceID }) |
+            @Html.ActionLink("Delete", "DeleteInvoice", new { id=item.invoiceID })
+        </td>
+    </tr>
+}
+
+</table>
