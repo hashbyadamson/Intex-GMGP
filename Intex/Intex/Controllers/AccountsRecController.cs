@@ -137,5 +137,29 @@ namespace Intex.Controllers
             }
             base.Dispose(disposing);
         }
+
+        public ActionResult QuerySales()
+        {
+            //choose which query to see
+            //add date?
+            return View();
+        }
+
+        public ActionResult ViewSales()
+        {
+                ViewBag.decision = 1;
+                IEnumerable<Sales_Report_By_Customer> sales_Report_ByCustomer =
+                db.Database.SqlQuery<Sales_Report_By_Customer>(
+                    "use intex " +
+                    "select clientFirstName, clientLastName, basePrice, testPrice " +
+                    "from client " +
+                    "left join [order] on client.clientid = [order].clientID " +
+                    "left join test_result on Test_Result.orderID = [order].orderID " +
+                    "left join test on test.testid = Test_Result.testID " +
+                    "where basePrice is not null"
+                    );
+                return View(sales_Report_ByCustomer);
+            
+        }
     }
 }

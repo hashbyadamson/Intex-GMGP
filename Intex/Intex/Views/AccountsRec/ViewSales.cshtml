@@ -1,0 +1,37 @@
+﻿@model IEnumerable<Intex.Models.Sales_Report_By_Customer>
+
+@{
+    ViewBag.Title = "ViewSales";
+}
+
+<h2>View Sales By Customer</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            Client Name
+        </th>
+        <th>
+            Total Income from Base Price
+        </th>
+        <th>
+            Total Income from Tests
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.clientFirstName) @Html.DisplayFor(modelItem => item.clientLastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.basePrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.testPrice)
+            </td>
+        </tr>
+    }
+
+</table>

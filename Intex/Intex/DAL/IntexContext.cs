@@ -38,5 +38,7 @@ namespace Intex.DAL
         public DbSet<Test> Tests { get; set; }
         public DbSet<Test_Result> Test_Results { get; set; }
         public DbSet<Test_Tube> Test_Tubes { get; set; }
+        public DbSet<Sales_Report_By_Customer> Sales_Report_By_Customers { get; set; }
+        public DbSet<Sales_Report_By_Assay> Sales_Report_By_Assays { get; set; }
     }
 }

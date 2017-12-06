@@ -1,0 +1,10 @@
+﻿@{
+    ViewBag.Title = "QuerySales";
+}
+
+<h2>Report Credentials</h2>
+<br />
+<h3>Select Report Type:</h3>
+@Html.ActionLink("View Sales by client", "ViewSales", null, new { @class = "btn btn-warning" })
+@Html.ActionLink("View Sales by assay", "ViewSales", null, new { @class = "btn btn-warning" })
+@Html.ActionLink("View Sales by employee", "ViewSales", null, new { @class = "btn btn-warning" })
