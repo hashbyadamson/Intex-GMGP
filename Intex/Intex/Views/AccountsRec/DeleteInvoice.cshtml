@@ -1,0 +1,72 @@
+﻿@model Intex.Models.Invoice
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Invoice</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Credit Card Number
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Credit_Card_Payment.creditCardPaymentNum)
+        </dd>
+
+        <dt>
+            Comments
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Order.comment)
+        </dd>
+
+        <dt>
+            Payment Method
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Payment_Type.paymentDescription)
+        </dd>
+
+        <dt>
+            Payment Due Date
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.paymentDue)
+        </dd>
+
+        <dt>
+            Payment Early Date
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.paymentEarly)
+        </dd>
+
+        <dt>
+            Early Payment Discount
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.earlyPaymentDisc)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "ViewInvoice")
+        </div>
+    }
+</div>

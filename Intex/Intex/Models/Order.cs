@@ -13,7 +13,7 @@ namespace Intex.Models
         [Key]
         public int orderID { get; set; }
         public String comment { get; set; }
-        public int resultsMailed { get; set; }
+        public bool resultsMailed { get; set; }
         public String summaryReport { get; set; }
         public DateTime comfirmationSenddatetime { get; set; }
 

@@ -1,0 +1,66 @@
+﻿@model Intex.Models.Invoice
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Invoice</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Credit Card Number
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Credit_Card_Payment.creditCardPaymentNum)
+        </dd>
+
+        <dt>
+            Comments
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Order.comment)
+        </dd>
+
+        <dt>
+            Payment Method
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Payment_Type.paymentDescription)
+        </dd>
+
+        <dt>
+            Payment Due Date
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.paymentDue)
+        </dd>
+
+        <dt>
+            Payment Early Date
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.paymentEarly)
+        </dd>
+
+        <dt>
+            Early Payment Discount
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.earlyPaymentDisc)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "EditInvoice", new { id = Model.invoiceID }) |
+    @Html.ActionLink("Back to List", "ViewInvoice")
+</p>

@@ -11,10 +11,10 @@ namespace Intex.Models
     public class Credit_Card_Payment
     {
         [Key]
-        public int creditCardPayment { get; set; }
-        public DateTime ccPaymentDate { get; set; }
+        public int creditCardPaymentNum { get; set; }
+        public DateTime ccPaymentdatetime { get; set; }
         public decimal ccPaymentAmount { get; set; }
-        public DateTime ccPaymentProcessedDate { get; set; }
+        public DateTime ccPaymentProcessDate { get; set; }
 
         [ForeignKey("Client")]
         public virtual int clientID { get; set; }

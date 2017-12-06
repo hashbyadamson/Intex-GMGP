@@ -1,0 +1,75 @@
+﻿@model Intex.Models.Invoice
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>Invoice</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            Payment Due Date
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.paymentDue, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.paymentDue, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            Early Payment Date
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.paymentEarly, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.paymentEarly, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            Early Payment Discount
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.earlyPaymentDisc, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.earlyPaymentDisc, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            Comments
+            <div class="col-md-10">
+                @Html.DropDownList("orderID", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.orderID, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            Payment Method
+            <div class="col-md-10">
+                @Html.DropDownList("paymentTypeCode", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.paymentTypeCode, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            Credit Card Number
+            <div class="col-md-10">
+                @Html.DropDownList("creditCardPaymentNum", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.creditCardPaymentNum, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "ViewInvoice")
+</div>

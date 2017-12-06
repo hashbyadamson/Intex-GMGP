@@ -243,10 +243,14 @@
     <Content Include="Views\Orders\Details.cshtml" />
     <Content Include="Views\Orders\Edit.cshtml" />
     <Content Include="Views\Orders\Index.cshtml" />
+    <Content Include="Views\AccountsRec\CreateInvoice.cshtml" />
+    <Content Include="Views\AccountsRec\DeleteInvoice.cshtml" />
+    <Content Include="Views\AccountsRec\InvoiceDetails.cshtml" />
+    <Content Include="Views\AccountsRec\EditInvoice.cshtml" />
+    <Content Include="Views\AccountsRec\ViewInvoice.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\AccountsRec\" />
     <Folder Include="Views\Client\" />
     <Folder Include="Views\Management\" />
     <Folder Include="Views\SalesRep\" />
