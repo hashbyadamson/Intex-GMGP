@@ -1,24 +1,34 @@
 ﻿@model IEnumerable<Intex.Models.Test_Result>
 
+
 @{
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Previous Tests Preformed</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Data_Report.rawData)
+            Test ID
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Order.comment)
+            Test Name
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Test.testName)
+            Compound Name
+        </th>
+        <th>
+            Client ID
+        </th>
+        <th>
+            Test Base Price
+        </th>
+        <th>
+            Test Materials and Labor Cost
+        </th>
+        <th>
+            Raw Data From Test
         </th>
         <th></th>
     </tr>
@@ -27,18 +37,28 @@
     {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Data_Report.rawData)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Order.comment)
+                @Html.DisplayFor(modelItem => item.Test.testID)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Test.testName)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.testResultID }) |
-                @Html.ActionLink("Details", "Details", new { id = item.testResultID }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.testResultID })
+                @Html.DisplayFor(modelItem => item.Order.comment)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Order.ClientID)
+            </td>
+            <td>
+                $@Html.DisplayFor(modelItem => item.Test.basePrice)
+            </td>
+            <td>
+                $@Html.DisplayFor(modelItem => item.Test.testPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Data_Report.rawData)
+            </td>
+            <td>
+                @Html.ActionLink("Details", "PastTestDetails", new { id = item.testResultID }) 
             </td>
         </tr>
     }

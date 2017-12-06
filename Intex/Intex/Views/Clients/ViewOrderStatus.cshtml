@@ -8,6 +8,7 @@
 
 <div class="jumbotron">
     <h2>Order Status: @ViewBag.Orders</h2>
+    <hr />
     
     @{ 
         if (ViewBag.Orders == "Order Received")
@@ -80,12 +81,15 @@
 </div>
 
 <div class="row">
-    <div class="col-md-2"></div>
-    <br />
+    <div class="col-md-2">
+        <br />
+    </div>
 
     <div class="col-md-8">
       
             <h2>Order Details: </h2>
+            
+            <hr />
 
             <p>Order Number: Model.orderID </p>
 

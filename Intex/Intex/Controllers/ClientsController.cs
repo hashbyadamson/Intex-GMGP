@@ -130,12 +130,37 @@ namespace Intex.Controllers
             base.Dispose(disposing);
         }
 
+        // GET: Orders/Create
         public ActionResult CreateOrder()
         {
-            //??????????????? There is a view but I don't know what to do. 
+            ViewBag.ClientID = new SelectList(db.Clients, "clientID", "clientFirstName");
+            ViewBag.dataReportID = new SelectList(db.Data_Reports, "dataReportID", "rawData");
+            ViewBag.employeeID = new SelectList(db.Employees, "employeeID", "employeeFirstName");
+            ViewBag.orderProgress = new SelectList(db.Order_Progresses, "orderProgress", "orderProgress");
             return View();
-
         }
+
+        // POST: Orders/Create
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create([Bind(Include = "orderID,comment,resultsMailed,summaryReport,comfirmationSenddatetime,orderProgress,employeeID,dataReportID,ClientID")] Order order)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Orders.Add(order);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+
+            ViewBag.ClientID = new SelectList(db.Clients, "clientID", "clientFirstName", order.ClientID);
+            ViewBag.dataReportID = new SelectList(db.Data_Reports, "dataReportID", "rawData", order.dataReportID);
+            ViewBag.employeeID = new SelectList(db.Employees, "employeeID", "employeeFirstName", order.employeeID);
+            ViewBag.orderProgress = new SelectList(db.Order_Progresses, "orderProgress", "orderProgress", order.orderProgress);
+            return View(order);
+        }
+
 
         public ActionResult ViewOrderStatus()
         {
