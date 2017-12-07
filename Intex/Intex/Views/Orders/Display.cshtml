@@ -3,7 +3,7 @@
     ViewBag.Title = "Display";
 }
 
-<h2>Employee Dashboard</h2>
+<h2 align="center">Employee Dashboard</h2>
 
 
 
@@ -69,21 +69,17 @@
 }
 
 <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-4" align="center">
         <h4>View All Invoices</h4>
         <hr />
         <p>@Html.ActionLink("View Invoices", "ViewInvoice", "AccountsRec", null, new { @class = "btn btn-danger btn-md" })</p>
     </div>
-    <div class="col-md-6">
+    <div class="col-md-4" align="center">
         <h4>View All Orders</h4>
         <hr />
         <p>@Html.ActionLink("View Orders", "Index", null, new { @class = "btn btn-danger btn-md" })</p>
     </div>
-</div>
-<hr />
-<br />
-<div class="row">
-    <div class="col-md-6">
+    <div class="col-md-4" align="center">
         <h4>View Sales Data</h4>
         <hr />
         <p>@Html.ActionLink("View Sales Data", "QuerySales", "AccountsRec", null, new { @class = "btn btn-danger btn-md" })</p>
