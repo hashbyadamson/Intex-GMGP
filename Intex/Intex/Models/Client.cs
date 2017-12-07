@@ -20,7 +20,6 @@ namespace Intex.Models
         public String clientLastName { get; set; }
         [Required(ErrorMessage = "This field is required")]
         public String addressLine1 { get; set; }
-        [Required(ErrorMessage = "This field is required")]
         public String addressLine2 { get; set; }
         [Required(ErrorMessage = "This field is required")]
         [RegularExpression(@"^[a-zA-Z]+$", ErrorMessage = "Use letters only please")]
