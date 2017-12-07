@@ -17,7 +17,7 @@ namespace Intex.Controllers
     {
         private IntexContext db = new IntexContext();
 
-        [Authorize]
+        
         public ActionResult Display()
         {
             return View();

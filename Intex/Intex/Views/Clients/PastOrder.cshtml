@@ -4,27 +4,25 @@
     ViewBag.Title = "Past Orders";
 }
 
-<h2>@ViewBag.client.clientFirstName @ViewBag.client.clientLastName Past Orders</h2>
+<h2>@ViewBag.client.clientFirstName @ViewBag.client.clientLastName's Past Orders</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+@Html.ActionLink("Back to Dashboard", "Display", null, new { @class = "btn btn-danger btn-md" })
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.orderID)
+            Order Number
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.comment)
+            Comments
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.summaryReport)
+            Summary Report
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.resultsMailed)
+            Were the Results Mailed?
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.orderProgress)
+            Order Progress
         </th>
         <th></th>
     </tr>
@@ -46,11 +44,7 @@
         <td>
             @Html.DisplayFor(modelItem => item.orderProgress)
         </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.orderID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.orderID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.orderID })
-        </td>
+        
     </tr>
 }
 

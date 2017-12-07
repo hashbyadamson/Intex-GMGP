@@ -9,6 +9,7 @@
 <p>
     @Html.ActionLink("Create New", "CreateInvoice")
 </p>
+<p>@Html.ActionLink("Back to Dashboard", "Display", "Orders", null, new { @class = "btn btn-danger btn-md" })</p>
 <table class="table">
     <tr>
         <th>
@@ -53,9 +54,8 @@
             @Html.DisplayFor(modelItem => item.earlyPaymentDisc)
         </td>
         <td>
-            @Html.ActionLink("Edit", "EditInvoice", new { id=item.invoiceID }) |
-            @Html.ActionLink("Details", "InvoiceDetails", new { id=item.invoiceID }) |
-            @Html.ActionLink("Delete", "DeleteInvoice", new { id=item.invoiceID })
+            @Html.ActionLink("Edit", "EditInvoice", new { id=item.invoiceID }, new { @class = "btn btn-danger btn-sm" }) |
+            @Html.ActionLink("Delete", "DeleteInvoice", new { id=item.invoiceID }, new { @class = "btn btn-danger btn-sm" })
         </td>
     </tr>
 }

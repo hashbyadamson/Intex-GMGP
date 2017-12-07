@@ -12,6 +12,23 @@ namespace Intex.Controllers
     public class HomeController : Controller
     {
         private IntexContext db = new IntexContext();
+
+
+        public ActionResult ClientDash()
+        {
+            return View();
+        }
+
+        public ActionResult EmployeeDash()
+        {
+            return View();
+        }
+
+
+
+
+
+
         public class Qty
         {
             int qty;
@@ -46,7 +63,7 @@ namespace Intex.Controllers
             {
                 FormsAuthentication.SetAuthCookie(email, rememberMe);
 
-                return RedirectToAction("Catalogue", "Home");
+                return RedirectToAction("Display", "Clients");
             }
             else
             {

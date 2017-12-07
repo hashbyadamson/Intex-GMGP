@@ -5,7 +5,8 @@
 }
 
 <h2>Orders</h2>
-@Html.ActionLink("Return to Display", "Display", null, new { @class= "btn btn-danger btn-md" })
+<p>@Html.ActionLink("Create New Order", "Create", null, new { @class= "btn btn-danger btn-sm" })</p>
+@Html.ActionLink("Back to Dashboard", "Display", null, new { @class= "btn btn-danger btn-sm" })
 
 <table class="table">
     <tr>
@@ -75,7 +76,7 @@
 
 <p>
 
-@TempData["Name"]
+
 
 </p>
 

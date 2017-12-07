@@ -1,0 +1,54 @@
+﻿
+@{
+    ViewBag.Title = "Display";
+}
+
+<h2>Client Dashboard</h2>
+
+<div class="row">
+    <div class="col-md-6">
+        <h4>Check Your Order Status</h4>
+        <hr />
+        <p>@Html.ActionLink("Order Status", "ViewOrderStatus", "Clients", null, new { @class = "btn btn-danger btn-md" })</p>
+    </div>
+    <div class="col-md-6">
+        <h4>Manage Email Notification Settings</h4>
+        <hr />
+        <p>@Html.ActionLink("Edit Email Notifications", "EditNotifications", "Clients", null, new { @class = "btn btn-danger btn-md" })</p>
+    </div>
+</div>
+<hr />
+<br />
+<div class="row">
+    <div class="col-md-6">
+        <h4>View Your Past Orders</h4>
+        <hr />
+        <p>@Html.ActionLink("View Past Orders", "PastOrder", null, new { @class = "btn btn-danger btn-md" })</p>
+    </div>
+    <div class="col-md-6">
+        <h4>Create a New Order</h4>
+        <hr />
+        <p>@Html.ActionLink("Create Order", "CreateOrder", null, new { @class = "btn btn-danger btn-md" })</p>
+    </div>
+</div>
+<hr />
+<br />
+<div class="row">
+    <div class="col-md-6">
+        <h4>Get a Quote</h4>
+        <hr />
+        <p>@Html.ActionLink("Get Quote", "QuoteForm", null, new { @class= "btn btn-danger btn-md" })</p>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+

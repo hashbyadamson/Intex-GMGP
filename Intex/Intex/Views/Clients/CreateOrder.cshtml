@@ -16,25 +16,17 @@
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
-            @Html.LabelFor(model => model.comment, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.comment, "Compound Name", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.comment, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.comment, "", new { @class = "text-danger" })
             </div>
         </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.resultsMailed, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                <div class="checkbox">
-                    @Html.EditorFor(model => model.resultsMailed)
-                    @Html.ValidationMessageFor(model => model.resultsMailed, "", new { @class = "text-danger" })
-                </div>
-            </div>
-        </div>
+        
 
         <div class="form-group">
-            @Html.LabelFor(model => model.summaryReport, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.summaryReport, "Amount of Compound", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.summaryReport, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.summaryReport, "", new { @class = "text-danger" })
@@ -42,7 +34,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.comfirmationSenddatetime, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.comfirmationSenddatetime, "Number of Samples", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.comfirmationSenddatetime, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.comfirmationSenddatetime, "", new { @class = "text-danger" })
@@ -50,36 +42,26 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.orderProgress, "orderProgress", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.comfirmationSenddatetime, "Test to Perform", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("orderProgress", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.orderProgress, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.comfirmationSenddatetime, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.comfirmationSenddatetime, "", new { @class = "text-danger" })
+                @Html.ActionLink("Add Test", "CreateOrder", null, new { @class = "btn btn-default" })
             </div>
         </div>
+       
+        
 
         <div class="form-group">
-            @Html.LabelFor(model => model.employeeID, "employeeID", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.comfirmationSenddatetime, "Date Needed By", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("employeeID", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.employeeID, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.comfirmationSenddatetime, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.comfirmationSenddatetime, "", new { @class = "text-danger" })
             </div>
         </div>
+      
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.dataReportID, "dataReportID", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("dataReportID", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.dataReportID, "", new { @class = "text-danger" })
-            </div>
-        </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.ClientID, "ClientID", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("ClientID", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.ClientID, "", new { @class = "text-danger" })
-            </div>
-        </div>
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
@@ -90,7 +72,7 @@
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Back to Dashboard", "Display", null, new { @class = "btn btn-danger btn-md" })
 </div>
 
 @section Scripts {

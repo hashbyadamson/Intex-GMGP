@@ -185,6 +185,7 @@
     <Compile Include="Models\Order_Progress.cs" />
     <Compile Include="Models\PastOrders.cs" />
     <Compile Include="Models\Payment_Type.cs" />
+    <Compile Include="Models\QuoteForm.cs" />
     <Compile Include="Models\Sales_Report_By_Customer.cs" />
     <Compile Include="Models\Sample.cs" />
     <Compile Include="Models\Test.cs" />
@@ -316,11 +317,15 @@
     <Content Include="Views\AccountsRec\ViewSales.cshtml" />
     <Content Include="Views\AccountsRec\QuerySales.cshtml" />
     <Content Include="Views\Orders\Display.cshtml" />
+    <Content Include="Views\Home\ClientDash.cshtml" />
+    <Content Include="Views\Home\EmployeeDash.cshtml" />
+    <Content Include="Views\Clients\Display.cshtml" />
+    <Content Include="Views\Clients\QuoteForm.cshtml" />
+    <Content Include="Views\Clients\Summary.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="UploadedFiles\" />
-    <Folder Include="Views\AccountsRec\" />
     <Folder Include="Views\Client\" />
     <Folder Include="Views\Management\" />
     <Folder Include="Views\SeattlePharm\" />

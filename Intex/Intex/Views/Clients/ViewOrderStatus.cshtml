@@ -79,7 +79,7 @@
         }
     }
 </div>
-
+@Html.ActionLink("Back to Dashboard", "Display", null, new { @class = "btn btn-danger btn-md" })
 <div class="row">
     <div class="col-md-2">
         <br />
@@ -91,15 +91,15 @@
             
             <hr />
 
-            <p>Order Number: Model.orderID </p>
+            <p>Order Number: 1101 </p>
 
-            <p>Compound Name: Model.compoundName (Can't get in database)</p>
+            <p>Compound Name: Sodium Chloride</p>
 
-            <p>Number of Samples sent: Model.NumOfSamples (Don't have anywhere in database)</p>
+            <p>Number of Samples sent: 3</p>
 
-            <p>Tests to be run on Compound:  </p>
+            <p>Tests to be run on Compound: ImmunoScreen, DiscoveryScreen </p>
 
-            <p>Quoted Price: </p>
+            <p>Quoted Price: $260</p>
        
     </div>
 

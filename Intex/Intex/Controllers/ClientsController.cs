@@ -16,6 +16,46 @@ namespace Intex.Controllers
     {
         private IntexContext db = new IntexContext();
 
+        public ActionResult Display()
+        {
+            return View();
+        }
+        
+        public ActionResult QuoteForm()
+        {
+            return View();
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult QuoteForm(FormCollection form)
+        {
+            if (ModelState.IsValid)
+            {
+                string comName = Request.Form["compoundName"];
+                string samples = Request.Form["numSamples"];
+                string email = Request.Form["inputEmail"];
+                string fName = Request.Form["firstName"];
+                string lName = Request.Form["lastName"];
+                string comment = Request.Form["comments"];
+
+
+                ViewBag.Compound = comName;
+                ViewBag.Sample = samples;
+                ViewBag.Email = email;
+                ViewBag.FirstName = fName;
+                ViewBag.LastName = lName;
+                ViewBag.Comments = comment;
+                return View("Summary");
+            }
+
+            return View();
+        }
+        
+        public ActionResult Summary()
+        {
+            return View();
+        }
+
         // GET: Clients
         public ActionResult Index()
         {
@@ -195,6 +235,7 @@ namespace Intex.Controllers
             ViewBag.ReceiveEmail = true;
             return View();
         }
+      
 
 
 
